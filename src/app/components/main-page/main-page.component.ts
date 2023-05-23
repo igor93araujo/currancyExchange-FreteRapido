@@ -52,6 +52,6 @@ export class MainPageComponent implements OnInit {
       this.exchanges = []
       this.createData()
     }
-    , 30000)
+    , 180000) // 3 minutes
   }
 }

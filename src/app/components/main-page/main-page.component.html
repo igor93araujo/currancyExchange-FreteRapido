@@ -9,11 +9,11 @@
       R$ {{ currancy.value | number:'1.2-2' }}
     </h1>
     <div class="currancy-details-container">
-      <div class="currancy-detail">
+      <div class="currancy-detail left">
         <h3>variação (%)</h3>
         <p>{{ currancy.variation | number:'1.2-2' }}</p>
       </div>
-      <hr>
+      <!-- <hr> -->
       <div class="currancy-detail">
         <h3>Atualizado</h3>
         <p>{{ currancy.date | date:'HH:mm:ss' }}</p>
