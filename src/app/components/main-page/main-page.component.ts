@@ -10,6 +10,7 @@ import { GetDataAPIService } from 'src/app/services/get-data-api.service';
 
 export class MainPageComponent implements OnInit {
   exchanges: any[] = []
+  
   constructor( private getDataApiService: GetDataAPIService ) {
     this.createData()
   }

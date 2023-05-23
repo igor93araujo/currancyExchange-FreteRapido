@@ -1,14 +1,21 @@
 <section class="main-container">
   <div *ngFor="let currancy of exchanges" class="currancy-card">
     <h2>{{ currancy.name }}</h2>
-    <h1>R$ {{ currancy.value | number:'1.2-2' }}</h1>
-    <div class="currancy-details">
-      <div class="currancy-variation">
-        <p>variação (%)</p>
+    <h1 [ngClass]="{
+      'high_variation': currancy.value > 5,
+      'medium_variation': currancy.value > 1 && currancy.value <= 5,
+      'low_variation': currancy.value <= 1
+    }">
+      R$ {{ currancy.value | number:'1.2-2' }}
+    </h1>
+    <div class="currancy-details-container">
+      <div class="currancy-detail">
+        <h3>variação (%)</h3>
         <p>{{ currancy.variation | number:'1.2-2' }}</p>
       </div>
-      <div>
-        <p>Atualizado</p>
+      <hr>
+      <div class="currancy-detail">
+        <h3>Atualizado</h3>
         <p>{{ currancy.date | date:'HH:mm:ss' }}</p>
       </div>
     </div>
