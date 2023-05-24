@@ -4,9 +4,9 @@ This aplication was developed to bring to the user the updated quotation of thre
 In this SPA (single page application) the user have acess to the values of canadian dollar, argentinian peso and pounds all converted to brazilian real and it's also possible to see new updated quotations every 3 minutes, containing also its variation in percentage. 
 
 :computer: Developement tecnologies</br>
-:paintbrush: Angular </br>
-:paintbrush: TypeScript </br>
-:paintbrush: Docker </br></br>
+:pushpin: Angular </br>
+:pushpin: TypeScript </br>
+:pushpin: Docker </br></br>
 :paintbrush: For styling: SASS
 
 
