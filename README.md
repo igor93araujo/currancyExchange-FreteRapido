@@ -17,8 +17,8 @@ In this SPA (single page application) the user have acess to the values of canad
 :small_blue_diamond: Clone or download the repository to you computer, open the terminal and run the following code in the repository root: "npm install"</br>
 :small_blue_diamond: After installing the dependencies, you can run "ng serve", in the terminal to open the project in localhost, pasting the given link in you browser navigation bar.</br></br>
 :arrow_right: With Docker:<br/>
-:exclamation: To run de application in a docker container, the user must have docker installed in his computer.
-:small_blue_diamond: In the terminal, run: "docker-compose up -d" to put the container up;</br:
+:exclamation: To run de application in a docker container, the user must have docker installed in his computer.</br>
+:small_blue_diamond: In the terminal, run: "docker-compose up -d --build" to put the container up;</br>
 :small_blue_diamond: Enter the bash running: "docker exec -it exchange_app bash
 
 
