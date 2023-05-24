@@ -10,15 +10,16 @@ import { GetDataAPIService } from 'src/app/services/get-data-api.service';
 
 export class MainPageComponent implements OnInit {
   exchanges: any[] = []
-  
+  anyError = false;
+
   constructor( private getDataApiService: GetDataAPIService ) {
     this.createData()
   }
 
   createData = ():void => {
     this.getDataApiService.getData().subscribe(
-      data => {
-        const {CADBRL, GBPBRL, ARSBRL} = data;
+      res => {
+        const {CADBRL, GBPBRL, ARSBRL} = res;
 
         const canadianDollar = {
           name: 'Dólar Canadense',
@@ -44,8 +45,12 @@ export class MainPageComponent implements OnInit {
             argentinianPeso,
             pound,
           )
-  })
-}
+      },
+      err => {
+        this.anyError = true
+      }
+    )
+  }
 
   ngOnInit(): void {
     setInterval(() => {
