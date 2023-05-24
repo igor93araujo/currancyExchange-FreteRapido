@@ -3,7 +3,7 @@
 This aplication was developed to bring to the user the updated quotation of three currancies converted to brazilian real currancy. 
 In this SPA (single page application) the user have acess to the values of canadian dollar, argentinian peso and pounds all converted to brazilian real and it's also possible to see new updated quotations every 3 minutes, containing also its variation in percentage. 
 
-:computer: This application was developed in Angular and Typescripet
+:computer: This application was developed in Angular and Typescripet</br>
 :paintbrush: For styling: SASS
 
 
