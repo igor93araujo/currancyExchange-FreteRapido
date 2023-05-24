@@ -5,14 +5,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
-import { LoadingComponent } from './components/loading/loading.component';
+import { SecondCurrancyComponent } from './components/second-currancy/second-currancy.component';
+import { ThirdCurrancyComponent } from './components/third-currancy/third-currancy.component';
+import { FirstCurrancyComponent } from './components/first-currancy/first-currancy.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MainPageComponent,
-    LoadingComponent
+    SecondCurrancyComponent,
+    ThirdCurrancyComponent,
+    FirstCurrancyComponent,
   ],
   imports: [
     BrowserModule,

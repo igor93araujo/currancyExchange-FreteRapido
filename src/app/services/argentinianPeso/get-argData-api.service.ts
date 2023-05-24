@@ -6,16 +6,14 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class GetDataAPIService {
-  private URL_BASE: string = 'https://economia.awesomeapi.com.br/last/';
-  public CAD_CONVERTION: string = 'CAD-BRL';
-  public ARS_CONVERTION: string = 'ARS-BRL';
-  public GBP_CONVERTION: string = 'GBP-BRL';
-
-  FULL_URL: string = `${this.URL_BASE}${this.CAD_CONVERTION},${this.ARS_CONVERTION},${this.GBP_CONVERTION}`;
-
   constructor( private http: HttpClient ) {}
 
-  getData() {
-    return this.http.get<any>(this.FULL_URL);
+  private URL_BASE: string = 'https://economia.awesomeapi.com.br/last/';
+  public ARS_CONVERTION: string = 'ARS-BRL';
+
+  private ARS_URL: string = `${this.URL_BASE}${this.ARS_CONVERTION}`;
+
+  getArsData() {
+    return this.http.get<any>(this.ARS_URL);
   }
 }

@@ -1,0 +1,24 @@
+<div class="currancy-card">
+ <h2>Libras Esterlinas</h2>
+ <img *ngIf="isLoading; else currancyContent" src="../../../assets/images/loader.svg" alt="loader">
+ <ng-template #currancyContent>
+  <!-- imprimindo o valor da chave valor orundos do obj canadianDollar -->
+  <h1 [ngClass]="{
+   'high_variation': pounds.value > 5,
+   'medium_variation': pounds.value > 1 && pounds.value <= 5,
+   'low_variation': pounds.value <= 1
+   }"
+    >
+  R$ {{ pounds.value | number:'1.2-2' }}</h1>
+  <div class="currancy-details-container">
+   <div class="currancy-detail left">
+     <h3>variação (%)</h3>
+     <p>{{ pounds.variation | number:'1.2-2' }}</p>
+   </div>
+   <div class="currancy-detail">
+     <h3>Atualizado</h3>
+     <p>{{ pounds.date | date:'HH:mm:ss' }}</p>
+   </div>
+ </div>
+ </ng-template>
+</div>
