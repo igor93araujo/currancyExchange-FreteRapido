@@ -4,6 +4,7 @@ import { GetDataAPIService } from 'src/app/services/argentinianPeso/get-argData-
 @Component({
   selector: 'app-second-currancy',
   templateUrl: './second-currancy.component.html',
+  styleUrls: ['../../app.component.sass']
 })
 export class SecondCurrancyComponent implements OnInit{
   constructor( private getDataApiService: GetDataAPIService ) {

@@ -4,6 +4,7 @@ import { GetDataAPIService } from 'src/app/services/pounds/get-data-api.service'
 @Component({
   selector: 'app-third-currancy',
   templateUrl: './third-currancy.component.html',
+  styleUrls: ['../../app.component.sass']
 })
 export class ThirdCurrancyComponent {
   constructor( private getDataApiService: GetDataAPIService ) {

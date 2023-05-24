@@ -4,6 +4,7 @@ import { GetDataAPIService } from 'src/app/services/canadianDollar/get-canData-a
 @Component({
   selector: 'app-first-currancy',
   templateUrl: './first-currancy.component.html',
+  styleUrls: ['../../app.component.sass']
 })
 
 export class FirstCurrancyComponent implements OnInit{
