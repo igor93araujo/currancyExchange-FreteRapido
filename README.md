@@ -7,7 +7,8 @@ In this SPA (single page application) the user have acess to the values of canad
 :pushpin: Angular </br>
 :pushpin: TypeScript </br>
 :pushpin: Docker </br></br>
-:paintbrush: For styling: SASS
+:paintbrush: For styling:</br>
+:pushpin: SASS
 
 
 ## Instructions
