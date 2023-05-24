@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: exchange_app
+    # O tty e stdin_open são necessários para que o container não pare logo após ser iniciado
+    tty: true
+    stdin_open: true
+    ports:
+      - 4200:4200      
