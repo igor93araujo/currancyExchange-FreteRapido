@@ -1,7 +1,7 @@
 # Currancies Exchange Project :dollar: :euro: 💴
 
 This aplication was developed to bring to the user the updated quotation of three currancies converted to brazilian real currancy. 
-In this SPA (single page application) the user have acess to the values of canadian dollar, argentinian peso and pounds all converted to brazilian real and it's also possible to see new updated quotations every 3 minutes, containing also its variation in percentage. 
+In this SPA (single page application) the user have acess to the values of canadian dollar, argentinian peso and pounds all converted to brazilian real and it's also possible to see new updated quotations every 3 minutes, containing also its variation in percentage. Furthermore, the application was developed for web and mobile versions.
 
 :computer: Developement tecnologies</br>
 :small_blue_diamond: Angular </br>
@@ -16,7 +16,7 @@ In this SPA (single page application) the user have acess to the values of canad
 :arrow_right: Without Docker:<br/>
 :small_blue_diamond: Clone or download the repository to you computer, open the terminal and run the following code in the repository root: "npm install"</br>
 
-:small_blue_diamond: After installing the dependencies, you can run "ng serve" in the terminal to open the project in localhost, pasting the given link in you browser navigation bar.</br></br>
+:small_blue_diamond: After installing the dependencies, you can run "npm start" in the terminal to open the project in localhost, pasting the given link in you browser navigation bar.</br></br>
 
 :arrow_right: With Docker:<br/>
 
@@ -29,4 +29,6 @@ In this SPA (single page application) the user have acess to the values of canad
 
 ## Demonstration
 :small_blue_diamond: To use the aplication, you can access the deploy link [HERE](https://currancy-exchange-frete-rapido.vercel.app/)</br>
+
+![img](appPrintScreen.png)
 
