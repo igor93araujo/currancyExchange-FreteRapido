@@ -9,7 +9,7 @@ In this SPA (single page application) the user have acess to the values of canad
 
 ## Instructions
 :small_blue_diamond: Clone or download the repository to you computer, open the terminal and run the following code in the repository root: "npm install"</br>
-:small_blue_diamond: After installing the dependencies, you can run "ng serve", without the quotes in the terminal to open the project in localhost, pasting the link in you browser navigation bar.
+:small_blue_diamond: After installing the dependencies, you can run "ng serve", in the terminal to open the project in localhost, pasting the given link in you browser navigation bar.
 
 ## Demonstration
 :small_blue_diamond: To use the aplication, you can access the deploy link [HERE](https://currancy-exchange-frete-rapido.vercel.app/)</br>
