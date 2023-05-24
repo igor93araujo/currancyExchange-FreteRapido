@@ -1,27 +1,16 @@
-# CurrancyExchangeFreteRapido
+# Currancies Exchange Project :dollar: :dollar: :euro:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.2.
+This aplication was developed to bring to the user the updated quotation of three currancies converted to brazilian real currancy. 
+In this SPA (single page application) the user have acess to the values of canadian dollar, argentinian peso and pounds all converted to brazilian real and it's also possible to see new updated quotations every 3 minutes, containing also its variation in percentage. 
 
-## Development server
+:computer: This application was developed in Angular and Typescripet
+:paintbrush: For styling: SASS
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Instructions
+:small_blue_diamond: Clone or download the repository to you computer, open the terminal and run the following code in the repository root: "npm install"</br>
+:small_blue_diamond: After installing the dependencies, you can run "ng serve", without the quotes in the terminal to open the project in localhost, pasting the link in you browser navigation bar.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Demonstration
+:small_blue_diamond: To use the aplication, you can access the deploy link [HERE](https://currancy-exchange-frete-rapido.vercel.app/)</br>
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
