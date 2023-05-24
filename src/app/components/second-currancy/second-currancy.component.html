@@ -2,7 +2,8 @@
  <h2>Peso Argentino</h2>
  <img *ngIf="isLoading; else currancyContent" src="../../../assets/images/loader.svg" alt="loader">
  <ng-template #currancyContent>
-  <!-- imprimindo o valor da chave valor orundos do obj canadianDollar -->
+  <div *ngIf="argentPeso.value !== 0; else apiError" class="currancyContent"
+  >
   <h1 [ngClass]="{
    'high_variation': argentPeso.value > 5,
    'medium_variation': argentPeso.value > 1 && argentPeso.value <= 5,
@@ -20,5 +21,14 @@
      <p>{{ argentPeso.date | date:'HH:mm:ss' }}</p>
    </div>
  </div>
+</div>
+<ng-template #apiError>
+  <div class="currancyContent">
+    <p>Algo deu errado</p>
+    <button (click)="getCurrancy()">
+      RECARREGAR
+    </button>
+  </div>
+</ng-template>
  </ng-template>
 </div>

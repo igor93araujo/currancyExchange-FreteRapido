@@ -14,7 +14,33 @@
     margin-top: 100px
     gap: 0
     align-items: flex-start
+
+.currancyContent 
+  height: 60%
+  width: 100%
+  display: flex
+  justify-content: center
+  gap: 20%
+  flex-direction: column
+  align-items: center
+
+  p
+    font-size: 26px
+    font-weight: 400
+    color: #717171
   
+  button
+    font-size: 18px
+    font-weight: 600
+    color: #717171
+    background-color: #F4F4F4
+    border-radius: 10px
+    border: 0
+    padding: 10px 20px
+    cursor: pointer
+  
+  button:hover
+    background-color: #E8E8E8
 
 .currancy-card 
  background-color: #ffffff
@@ -44,6 +70,7 @@
   line-height: 96px
 
 @media screen and (max-width: 1180px)
+  
   .currancy-card 
     width: 300px
     height: 328px
@@ -58,6 +85,7 @@
     p
       font-size: 1.5rem
       line-height: 2rem
+
 
 .currancy-details-container 
  display: flex
