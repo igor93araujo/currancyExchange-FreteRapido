@@ -1,8 +1,9 @@
 <section class="main-container">
   <div *ngFor="let currancy of exchanges" class="currancy-card">
     <div *ngIf="!anyError; else errorMessage" class="currancy-card">
-    <h2>{{ currancy.name }}</h2>
-
+      <h2>{{ currancy.name }}</h2>
+      
+    <img *ngIf="isLoading" src="../../../assets/images/loader.svg" alt="loader">
     <h1 [ngClass]="{
       'high_variation': currancy.value > 5,
       'medium_variation': currancy.value > 1 && currancy.value <= 5,

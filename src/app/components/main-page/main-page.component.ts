@@ -11,12 +11,14 @@ import { GetDataAPIService } from 'src/app/services/get-data-api.service';
 export class MainPageComponent implements OnInit {
   exchanges: any[] = []
   anyError = false;
+  isLoading = true;
 
   constructor( private getDataApiService: GetDataAPIService ) {
     this.createData()
   }
 
   createData = ():void => {
+    this.isLoading = true
     this.getDataApiService.getData().subscribe(
       res => {
         const {CADBRL, GBPBRL, ARSBRL} = res;
@@ -50,6 +52,7 @@ export class MainPageComponent implements OnInit {
         this.anyError = true
       }
     )
+    this.isLoading = false
   }
 
   ngOnInit(): void {
