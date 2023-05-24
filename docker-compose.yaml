@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: exchange_app
+    tty: true
+    stdin_open: true
+    # command: ng serve
+    image: exchange_app
+    restart: always 
+    working_dir: /app
+    ports:
+      - '4200:4200'
