@@ -1,30 +1,5 @@
 <section class="main-container">
-  <div *ngFor="let currancy of currancies" class="currancy-card">
-    <h2>{{ currancy.name }}</h2>
-    <div *ngIf="!anyError; else errorMessage" class="currancy-card">
-      
-    <img *ngIf="isLoading" src="../../../assets/images/loader.svg" alt="loader">
-    <h1 [ngClass]="{
-      'high_variation': currancy.value > 5,
-      'medium_variation': currancy.value > 1 && currancy.value <= 5,
-      'low_variation': currancy.value <= 1
-    }">
-      R$ {{ currancy.value | number:'1.2-2' }}
-    </h1>
-
-    <div class="currancy-details-container">
-      <div class="currancy-detail left">
-        <h3>variação (%)</h3>
-        <p>{{ currancy.variation | number:'1.2-2' }}</p>
-      </div>
-      <div class="currancy-detail">
-        <h3>Atualizado</h3>
-        <p>{{ currancy.date | date:'HH:mm:ss' }}</p>
-      </div>
-    </div>
-  </div>
-  <ng-template #errorMessage>
-    <h2>Erro ao carregar dados</h2>
-  </ng-template>
-  </div>
+ <app-first-currancy/>
+ <app-second-currancy/>
+ <app-third-currancy/>
 </section>
