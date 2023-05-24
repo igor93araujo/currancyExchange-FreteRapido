@@ -1,7 +1,7 @@
 <section class="main-container">
-  <div *ngFor="let currancy of exchanges" class="currancy-card">
+  <div *ngFor="let currancy of currancies" class="currancy-card">
+    <h2>{{ currancy.name }}</h2>
     <div *ngIf="!anyError; else errorMessage" class="currancy-card">
-      <h2>{{ currancy.name }}</h2>
       
     <img *ngIf="isLoading" src="../../../assets/images/loader.svg" alt="loader">
     <h1 [ngClass]="{

@@ -9,7 +9,7 @@ import { GetDataAPIService } from 'src/app/services/get-data-api.service';
 
 
 export class MainPageComponent implements OnInit {
-  exchanges: any[] = []
+  currancies: any[] = []
   anyError = false;
   isLoading = true;
 
@@ -42,7 +42,7 @@ export class MainPageComponent implements OnInit {
           date: GBPBRL.create_date,
         }
 
-        this.exchanges.push(
+        this.currancies.push(
             canadianDollar,
             argentinianPeso,
             pound,
@@ -57,7 +57,7 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit(): void {
     setInterval(() => {
-      this.exchanges = []
+      this.currancies = []
       this.createData()
     }
     , 180000) // 3 minutes
