@@ -24,7 +24,8 @@ In this SPA (single page application) the user have acess to the values of canad
 :small_blue_diamond: Clone or download the repository to you computer</br>
 :small_blue_diamond: In the terminal, run: "docker-compose up -d" to put the container up;</br>
 :small_blue_diamond: Enter the bash running: "docker exec -it exchange_app bash</br>
-:small_blue_diamond: Run the code "ng serve"
+:small_blue_diamond: Run the code "npm install"</br>
+:small_blue_diamond: Run the code "npm start"
 
 
 ## Demonstration
