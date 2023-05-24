@@ -14,7 +14,7 @@ export class FirstCurrancyComponent implements OnInit{
   }
   
   anyError = false;
-  isLoading = true;
+  isLoading = false;
   canadianDollar = {
     value: 0,
     variation: 0,

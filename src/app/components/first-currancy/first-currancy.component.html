@@ -2,23 +2,32 @@
  <h2>Dólar Canadense</h2>
  <img *ngIf="isLoading; else currancyContent" src="../../../assets/images/loader.svg" alt="loader">
  <ng-template #currancyContent>
-  <!-- imprimindo o valor da chave valor orundos do obj canadianDollar -->
-  <h1 [ngClass]="{
-   'high_variation': canadianDollar.value > 5,
-   'medium_variation': canadianDollar.value > 1 && canadianDollar.value <= 5,
-   'low_variation': canadianDollar.value <= 1
-   }"
-    >
-  R$ {{ canadianDollar.value | number:'1.2-2' }}</h1>
-  <div class="currancy-details-container">
-   <div class="currancy-detail left">
-     <h3>variação (%)</h3>
-     <p>{{ canadianDollar.variation | number:'1.2-2' }}</p>
-   </div>
-   <div class="currancy-detail">
-     <h3>Atualizado</h3>
-     <p>{{ canadianDollar.date | date:'HH:mm:ss' }}</p>
-   </div>
- </div>
+  <div *ngIf="canadianDollar.value !== 0; else apiError" class="currancyContent">
+
+    <h1 [ngClass]="{
+    'high_variation': canadianDollar.value > 5,
+    'medium_variation': canadianDollar.value > 1 && canadianDollar.value <= 5,
+    'low_variation': canadianDollar.value <= 1
+    }">R$ {{ canadianDollar.value | number:'1.2-2' }}</h1>
+
+    <div class="currancy-details-container">
+      <div class="currancy-detail left">
+        <h3>variação (%)</h3>
+        <p>{{ canadianDollar.variation | number:'1.2-2' }}</p>
+      </div>
+      <div class="currancy-detail">
+        <h3>Atualizado</h3>
+        <p>{{ canadianDollar.date | date:'HH:mm:ss' }}</p>
+      </div>
+    </div>
+  </div>
+    <ng-template #apiError>
+      <div class="currancyContent">
+        <p>Algo deu errado</p>
+        <button (click)="getCurrancy()">
+          RECARREGAR
+        </button>
+      </div>
+    </ng-template>
  </ng-template>
 </div>
