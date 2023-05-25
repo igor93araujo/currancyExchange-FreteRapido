@@ -10,4 +10,5 @@ services:
     tty: true
     stdin_open: true
     ports:
-      - 4200:4200      
+      - 4200:4200
+    restart: always     
