@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetDataAPIService } from 'src/app/services/canadianDollar/get-canData-api.service';
+import { currancy } from 'src/interfaces/currancy';
 
 @Component({
   selector: 'app-first-currancy',
@@ -13,15 +14,15 @@ export class FirstCurrancyComponent implements OnInit{
     this.getCurrancy()
   }
   
-  anyError = false;
-  isLoading = false;
-  canadianDollar = {
+  anyError:boolean = false;
+  isLoading:boolean = false;
+  canadianDollar:currancy = {
     value: 0,
     variation: 0,
     date: '',
   };
   
-  getCurrancy = () => {
+  getCurrancy = ():void => {
     this.getDataApiService.getCadData().subscribe(
       res => {
         const {CADBRL} = res;
@@ -30,9 +31,6 @@ export class FirstCurrancyComponent implements OnInit{
           variation: CADBRL.varBid,
           date: CADBRL.create_date,
         }
-      },
-      err => {
-        this.anyError = true
       }
     )
     this.isLoading = false

@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core'; // o injectable é para que o serviço possa ser injetado em outros componentes
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { currancy } from 'src/interfaces/currancy';
 
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class GetDataAPIService {
   constructor( private http: HttpClient ) {}
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { GetDataAPIService } from 'src/app/services/pounds/get-data-api.service';
+import { currancy } from 'src/interfaces/currancy';
 
 @Component({
   selector: 'app-third-currancy',
@@ -11,15 +12,16 @@ export class ThirdCurrancyComponent {
     this.getCurrancy()
   }
   
-  anyError = false;
-  isLoading = true;
-  pounds = {
+  anyError:boolean = false;
+  isLoading:boolean = false;
+
+  pounds:currancy = {
     value: 0,
     variation: 0,
     date: '',
   };
   
-  getCurrancy = () => {
+  getCurrancy = ():void => {
     this.getDataApiService.getGbpData().subscribe(
       res => {
         const {GBPBRL} = res;
@@ -29,9 +31,6 @@ export class ThirdCurrancyComponent {
           date: GBPBRL.create_date,
         }
       },
-      err => {
-        this.anyError = true
-      }
     )
     this.isLoading = false
   }

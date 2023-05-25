@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
   import { delay } from 'rxjs';
 import { GetDataAPIService } from 'src/app/services/argentinianPeso/get-argData-api.service';
+import { currancy } from 'src/interfaces/currancy';
 
 @Component({
   selector: 'app-second-currancy',
@@ -12,15 +13,16 @@ export class SecondCurrancyComponent implements OnInit{
     this.getCurrancy()
   }
   
-  anyError = false;
-  isLoading = false;
-  argentPeso = {
+  anyError:boolean = false;
+  isLoading:boolean = false;
+
+  argentPeso:currancy = {
     value: 0,
     variation: 0,
     date: '',
   };
   
-  getCurrancy = () => {
+  getCurrancy = ():void => {
     this.isLoading = true
     this.getDataApiService.getArsData().subscribe(
       res => {
@@ -30,15 +32,11 @@ export class SecondCurrancyComponent implements OnInit{
           variation: ARSBRL.varBid,
           date: ARSBRL.create_date,
         };
-      },
-      err => {
-        this.anyError = true
       }
     )
     this.isLoading = false
   }
 
-// Chamando a api a cada 3 minutos
   ngOnInit(): void {
     setInterval(() => {
       this.getCurrancy()
