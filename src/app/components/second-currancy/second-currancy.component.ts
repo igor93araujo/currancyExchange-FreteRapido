@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+  import { delay } from 'rxjs';
 import { GetDataAPIService } from 'src/app/services/argentinianPeso/get-argData-api.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class SecondCurrancyComponent implements OnInit{
   }
   
   anyError = false;
-  isLoading = true;
+  isLoading = false;
   argentPeso = {
     value: 0,
     variation: 0,
@@ -20,6 +21,7 @@ export class SecondCurrancyComponent implements OnInit{
   };
   
   getCurrancy = () => {
+    this.isLoading = true
     this.getDataApiService.getArsData().subscribe(
       res => {
         const {ARSBRL} = res;
@@ -27,7 +29,7 @@ export class SecondCurrancyComponent implements OnInit{
           value: ARSBRL.ask,
           variation: ARSBRL.varBid,
           date: ARSBRL.create_date,
-        }
+        };
       },
       err => {
         this.anyError = true

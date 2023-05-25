@@ -1,6 +1,6 @@
 <div class="currancy-card">
- <h2>Peso Argentino</h2>
- <img *ngIf="isLoading; else currancyContent" src="../../../assets/images/loader.svg" alt="loader">
+  <h2>Peso Argentino</h2>
+  <img *ngIf="isLoading; else currancyContent" src="../../../assets/images/loader.svg" alt="loader">
  <ng-template #currancyContent>
   <div *ngIf="argentPeso.value !== 0; else apiError" class="currancyContent"
   >
