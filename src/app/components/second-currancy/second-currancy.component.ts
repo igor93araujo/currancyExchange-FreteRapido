@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-  import { delay } from 'rxjs';
-import { GetDataAPIService } from 'src/app/services/argentinianPeso/get-argData-api.service';
+import { GetArsDataAPIService } from 'src/app/services/argentinianPeso/get-argData-api.service';
 import { currancy } from 'src/interfaces/currancy';
 
 @Component({
@@ -9,7 +8,7 @@ import { currancy } from 'src/interfaces/currancy';
   styleUrls: ['../../app.component.sass']
 })
 export class SecondCurrancyComponent implements OnInit{
-  constructor( private getDataApiService: GetDataAPIService ) {
+  constructor( private GetArsDataAPIService: GetArsDataAPIService ) {
     this.getCurrancy()
   }
   
@@ -22,19 +21,25 @@ export class SecondCurrancyComponent implements OnInit{
     date: '',
   };
   
-  getCurrancy = ():void => {
-    this.isLoading = true
-    this.getDataApiService.getArsData().subscribe(
-      res => {
-        const {ARSBRL} = res;
-        this.argentPeso = {
-          value: ARSBRL.ask,
-          variation: ARSBRL.varBid,
-          date: ARSBRL.create_date,
-        };
+  getCurrancy(): void {
+    this.isLoading = true;
+    this.GetArsDataAPIService.getArsData().subscribe({
+      next: res => { // O next é o que será executado quando a requisição for bem sucedida
+        if (res) { // Verifica se os dados não são nulos antes de atribuí-los
+          const { ARSBRL } = res;
+          this.argentPeso = {
+            value: ARSBRL.ask,
+            variation: ARSBRL.varBid,
+            date: ARSBRL.create_date,
+          };
+        }
+        this.isLoading = false;
+      },
+      error: error => {
+        console.log('Erro ao obter os dados da API:', error);
+        this.isLoading = false;
       }
-    )
-    this.isLoading = false
+    });
   }
 
   ngOnInit(): void {
