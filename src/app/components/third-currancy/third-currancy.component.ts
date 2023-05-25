@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { GetDataAPIService } from 'src/app/services/pounds/get-data-api.service';
+import { GetPouDataAPIService } from 'src/app/services/pounds/get-data-api.service';
 import { currancy } from 'src/interfaces/currancy';
 
 @Component({
@@ -8,7 +8,7 @@ import { currancy } from 'src/interfaces/currancy';
   styleUrls: ['../../app.component.sass']
 })
 export class ThirdCurrancyComponent {
-  constructor( private getDataApiService: GetDataAPIService ) {
+  constructor( private GetPouDataAPIService: GetPouDataAPIService ) {
     this.getCurrancy()
   }
   
@@ -22,17 +22,24 @@ export class ThirdCurrancyComponent {
   };
   
   getCurrancy = ():void => {
-    this.getDataApiService.getGbpData().subscribe(
-      res => {
-        const {GBPBRL} = res;
-        this.pounds = {
-          value: GBPBRL.ask,
-          variation: GBPBRL.varBid,
-          date: GBPBRL.create_date,
-        }
+    this.isLoading = true;
+    this.GetPouDataAPIService.getGbpData().subscribe({
+      next: res => { // O next é o que será executado quando a requisição for bem sucedida
+        if (res) { // Verifica se os dados não são nulos antes de atribuí-los
+          const { GBPBRL } = res;
+          this.pounds = {
+            value: GBPBRL.ask,
+            variation: GBPBRL.varBid,
+            date: GBPBRL.create_date,
+          };
+    }
+        this.isLoading = false;
       },
-    )
-    this.isLoading = false
+      error: error => {
+        console.log('Erro ao obter os dados da API:', error);
+        this.isLoading = false;
+      }
+    });
   }
 
 // Chamando a api a cada 3 minutos
